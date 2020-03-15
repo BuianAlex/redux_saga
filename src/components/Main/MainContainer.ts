@@ -9,7 +9,8 @@ const mapStateToProps = (state: any) => {
   return {
     peoplesList: peoplesList || [],
     theme: state.main.theme,
-    isWaitResponse: state.main.isWaitResponse
+    isWaitResponse: state.main.isWaitResponse,
+    mainMsg: state.main.mainMsg
   };
 };
 

@@ -6,16 +6,16 @@ import Api from '../services/api';
 export function* getAllPeople() {
   yield put({ type: GET_DATA });
   try {
-    const resApi = yield call(Api.getAllPeople);
-    if (resApi) {
-      const { results } = resApi.data;
+    const { response, error } = yield call(Api.getAllPeople);
+    if (response) {
+      const { results } = response.data;
       yield put({ type: GET_DATA_SUSEFUL });
       yield put({ type: GET_PEOPLE_SUCCESS, payload: results });
     } else {
-      yield put({ type: GET_DATA_ERROR });
+      yield put({ type: GET_DATA_ERROR, payload: error.message });
     }
   } catch {
-    yield put({ type: GET_DATA_ERROR });
+    yield put({ type: GET_DATA_ERROR, payload: 'Something went wrong' });
   }
 }
 

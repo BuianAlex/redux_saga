@@ -8,7 +8,8 @@ import {
 
 const defaultState = {
   theme: 'light',
-  isWaitResponse: false
+  isWaitResponse: false,
+  mainMsg: { state: false, text: '', type: 'error' }
 };
 
 export default (state = defaultState, action: any) => {
@@ -19,7 +20,8 @@ export default (state = defaultState, action: any) => {
       });
     case GET_DATA:
       return update(state, {
-        isWaitResponse: { $set: true }
+        isWaitResponse: { $set: true },
+        mainMsg: { $set: defaultState.mainMsg }
       });
 
     case GET_DATA_SUSEFUL:
@@ -29,7 +31,8 @@ export default (state = defaultState, action: any) => {
 
     case GET_DATA_ERROR:
       return update(state, {
-        isWaitResponse: { $set: false }
+        isWaitResponse: { $set: false },
+        mainMsg: { $set: { state: true, text: action.payload, type: 'sdfsdf' } }
       });
     default:
       return state;

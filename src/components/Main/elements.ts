@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const AppBar = styled.div`
-  background-color: #2196f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: ${props => props.theme.appBar};
   color: #fff;
   min-height: 4rem;
 `;
@@ -22,17 +26,24 @@ export const CharacterPanel = styled.li`
 
     span:nth-child(2) {
       flex: 1 0;
-      border-bottom: 1px dotted #000;
+      border-bottom: 1px dotted ${props => props.theme.color};
       height: 1em;
       margin: 0 0.4em;
     }
   }
 `;
+
 export const CharacterPanelWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #eee;
   padding: 2rem;
   margin: 0;
+`;
+
+export const MainContainer = styled.div`
+  box-sizing: border-box;
+  background-color: ${props => props.theme.mainBgc};
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 `;

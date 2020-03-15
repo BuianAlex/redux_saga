@@ -1,1 +1,1 @@
-export const API_HOST = 'https://1swapi.co/api/';
+export const API_HOST = 'https://swapi.co/api/';

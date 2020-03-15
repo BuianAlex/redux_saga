@@ -19,7 +19,7 @@ export const Switch = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #fff;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -31,13 +31,13 @@ export const Switch = styled.label`
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: ${props => props.theme.appBar};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
 
   input:checked + span {
-    background-color: #2196f3;
+    background-color: #fff;
   }
 
   input:focus + span {

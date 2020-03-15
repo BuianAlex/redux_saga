@@ -5,6 +5,9 @@ axios.defaults.baseURL = API_HOST;
 
 export default class API {
   static getAllPeople() {
-    return axios.get(`/people/`);
+    return axios
+      .get(`/people/`)
+      .then(response => ({ response }))
+      .catch(error => ({ error }));
   }
 }
